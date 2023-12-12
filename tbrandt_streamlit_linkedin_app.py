@@ -6,7 +6,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
 # Part 1
-s = pd.read_csv(r"C:\Users\timwb\OneDrive\Desktop\Georgetown MSBA\3. ProgrammingII.Data Infrastructure\Final Project\social_media_usage.csv")
+s = pd.read_csv("social_media_usage.csv")
 
 def clean_sm(x):
     return np.where(x == 1, 1, 0)

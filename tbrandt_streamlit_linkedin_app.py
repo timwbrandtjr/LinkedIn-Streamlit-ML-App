@@ -85,33 +85,40 @@ def main():
 
     # Sidebar with user input
     st.sidebar.header("User Input Features")
-    income = st.sidebar.slider("Income", 1, 9, 5)
-    education = st.sidebar.slider("Education", 1, 8, 4)
-    parent = st.sidebar.radio("Parent", ["No", "Yes"])
-    marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"])
-    gender = st.sidebar.radio("Gender", ["Male", "Female"])
-    age = st.sidebar.slider("Age", 18, 98, 30)
-
-    # Load the fitted scaler
-    scaler = load_scaler()
+    income = st.sidebar.slider("Income", 1, 9, 5, help="Select your income level (1-9)")
+    education = st.sidebar.slider("Education", 1, 8, 4, help="Select your education level (1-8)")
+    parent = st.sidebar.radio("Parent", ["No", "Yes"], help="Select if you are a parent")
+    marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], help="Select your marital status")
+    gender = st.sidebar.radio("Gender", ["Male", "Female"], help="Select your gender")
+    age = st.sidebar.slider("Age", 18, 98, 30, help="Select your age")
 
     # Display the user input features
     st.write("## User Input Features")
-    user_input = pd.DataFrame({'income': [income], 'educ2': [education], 'par': [1 if parent == "Yes" else 0],
-                               'marital': [1 if marital_status == "Married" else 0],
-                               'gender': [1 if gender == "Female" else 0], 'age': [age]})
-    st.table(user_input)
+    st.write(f"- **Income:** {income}")
+    st.write(f"- **Education:** {education}")
+    st.write(f"- **Parent:** {parent}")
+    st.write(f"- **Marital Status:** {marital_status}")
+    st.write(f"- **Gender:** {gender}")
+    st.write(f"- **Age:** {age}")
 
     # Load the model and make predictions
-    model = load_model()
-    probability = predict_probability(user_input, scaler, model)
+    probability = predict_probability([[income, education, 1 if parent == 'Yes' else 0,
+                                       1 if marital_status == 'Married' else 0,
+                                       1 if gender == 'Female' else 0, age]], scaler, model)
 
     # Display prediction results
-    st.write("## Prediction")
-    st.write(f"Probability of being a LinkedIn user: {probability[0]:.2f}")
+    st.write("## Prediction Probability")
+    st.progress(probability[0])
 
-    prediction = "LinkedIn User" if probability >= 0.5 else "Non-LinkedIn User"
-    st.write(f"Prediction: {prediction}")
+    prediction_text = f"The predicted class is: {'LinkedIn User' if probability >= 0.5 else 'Non-LinkedIn User'} " \
+                      f"with a probability of {probability[0]:.2f}"
+    st.write(prediction_text)
+
+    st.markdown("""
+        *Data Source: [Your Data Source]*  
+        *Model Details: [Your Model Details]*  
+        *Source Code: [Link to GitHub]*  
+    """)
 
 if __name__ == '__main__':
     main()

@@ -77,6 +77,12 @@ def predict_probability(features, scaler, model):
 def main():
     st.title("LinkedIn User Prediction App")
 
+    st.markdown("""
+            This app predicts the probability that a user is a LinkedIn member based on their 
+            demographics and social attributes. It is trained using logistic regression to 
+            estimate membership likelihood from parameters like income, education, age etc.
+            """)
+
     # Sidebar with user input
     st.sidebar.header("User Input Features")
     income = st.sidebar.slider("Income", 1, 9, 5)

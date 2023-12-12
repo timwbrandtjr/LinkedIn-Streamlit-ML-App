@@ -113,5 +113,11 @@ def main():
     prediction = "LinkedIn User" if probability >= 0.5 else "Non-LinkedIn User"
     st.write(f"Prediction: {prediction}")
 
+    primaryColor="#F63366"
+    backgroundColor="#FFFFFF"
+    secondaryBackgroundColor="#F0F2F6"
+    textColor="#262730"
+    font="sans serif"
+
 if __name__ == '__main__':
     main()

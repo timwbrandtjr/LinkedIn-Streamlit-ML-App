@@ -102,9 +102,10 @@ def main():
     st.write(f"- **Age:** {age}")
 
     # Load the model and make predictions
+    loaded_model, loaded_scaler = load_model_and_scaler()
     probability = predict_probability([[income, education, 1 if parent == 'Yes' else 0,
                                        1 if marital_status == 'Married' else 0,
-                                       1 if gender == 'Female' else 0, age]], scaler, model)
+                                       1 if gender == 'Female' else 0, age]], loaded_scaler, loaded_model)
 
     # Display prediction results
     st.write("## Prediction Probability")

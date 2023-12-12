@@ -4,7 +4,6 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-import joblib
 
 # Part 1
 s = pd.read_csv(r"C:\Users\timwb\OneDrive\Desktop\Georgetown MSBA\3. ProgrammingII.Data Infrastructure\Final Project\social_media_usage.csv")
@@ -55,6 +54,8 @@ logistic_model = LogisticRegression(class_weight="balanced", max_iter=1000)
 
 # Fit model
 logistic_model.fit(X_train_scaled, y_train)
+
+# Part 2
 
 def load_model():
     # Load your trained model here

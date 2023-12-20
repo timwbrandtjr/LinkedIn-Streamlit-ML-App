@@ -75,7 +75,8 @@ def predict_probability(features, scaler, model):
     return probability
 
 def main():
-    st.title("LinkedIn User Prediction App")
+     st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
+    st.markdown("<h1 style='color: #0a66c2;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
 
     st.markdown("""
             This app predicts the probability that a user is a LinkedIn member based on their 

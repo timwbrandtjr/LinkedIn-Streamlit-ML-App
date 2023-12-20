@@ -105,12 +105,17 @@ def main():
     # Load the model and make predictions
     model = load_model()
     probability = predict_probability(user_input, scaler, model)
+    probability_pct = probability[0] * 100
 
     # Display prediction results
     st.write("## Prediction")
-    st.write(f"Probability of being a LinkedIn user: {probability[0]:.2f}")
+    st.write(f"Probability of being a LinkedIn user: {probability_pct:.2f}%")
 
-    prediction = "LinkedIn User" if probability >= 0.5 else "Non-LinkedIn User"
+     if probability_pct >= 50:
+        prediction = "LinkedIn User"
+    else:
+        prediction = "Non-LinkedIn User"
+        
     st.write(f"Prediction: {prediction}")
 
 if __name__ == '__main__':

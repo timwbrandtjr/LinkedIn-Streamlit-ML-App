@@ -111,7 +111,7 @@ def main():
     st.write("## Prediction")
     st.write(f"Probability of being a LinkedIn user: {probability_pct:.2f}%")
 
-     if probability_pct >= 50:
+    if probability_pct >= 50:
     prediction = "LinkedIn User"
     else:
     prediction = "Non-LinkedIn User"

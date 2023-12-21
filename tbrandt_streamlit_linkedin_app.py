@@ -97,9 +97,12 @@ def main():
             targeting specific customer segments.
             """)
 
+
+    income_info = "1: Less than $10,000\n2: $10,000 to under $20,000\n3: $20,000 to under $30,000\n4: $30,000 to under $40,000\n5: $40,000 to under $50,000\n6: $50,000 to under $75,000\n7: $75,000 to under $100,000\n8: $100,000 to under $150,000\n9: $150,000 or more"
+
     # Sidebar with user input
     st.sidebar.header("User Input Features")
-    income = st.sidebar.slider("Income", 1, 9, 5, key="income_slider")
+    income = st.sidebar.slider("Income", 1, 9, 5, key="income_slider", help=income_info)
     education = st.sidebar.slider("Education", 1, 8, 4, key="education_slider")
     parent = st.sidebar.radio("Parent", ["No", "Yes"], key="parent_radio", help="Parental Status", )
     marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio")

@@ -82,7 +82,7 @@ def kpi_box(title, value):
     </div>
     """
     
-user_input = pd.DataFrame()
+
 def main():
     st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
     st.markdown("<h1 style='color: #0a66c2;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
@@ -104,6 +104,8 @@ def main():
     marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio")
     gender = st.sidebar.radio("Gender", ["Male", "Female"], key="gender_radio")
     age = st.sidebar.slider("Age", 18, 98, 30, key="age_slider")
+
+    user_input = pd.DataFrame()
 
     # Load the fitted scaler
     scaler = load_scaler()

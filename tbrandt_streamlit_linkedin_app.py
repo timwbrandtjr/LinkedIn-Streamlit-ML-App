@@ -118,7 +118,7 @@ def main():
 
     # Display prediction results
     st.write("## Prediction")
-    st.markdown(kpi_box(f"{probability_pct:.2f}%", "Probability of being a LinkedIn user"), unsafe_allow_html=True
+    st.markdown(kpi_box(f"{probability_pct:.2f}%", "Probability of being a LinkedIn user"), unsafe_allow_html=True)
 
     if probability_pct >= 50:
         prediction = "LinkedIn User"

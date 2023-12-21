@@ -98,7 +98,7 @@ def main():
             """)
 
 
-        income_info = """
+    income_info = """
     <style>
     .st-bb {
       background-color: #f0f2f6; 

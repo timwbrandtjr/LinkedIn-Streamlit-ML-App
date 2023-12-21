@@ -105,19 +105,26 @@ def main():
     gender = st.sidebar.radio("Gender", ["Male", "Female"], key="gender_radio")
     age = st.sidebar.slider("Age", 18, 98, 30, key="age_slider")
 
-    # Load the fitted scaler
+    # Load the fitted scaler and model
     scaler = load_scaler()
+    model = load_model()
+
+    # Create a DataFrame with all features (including user input)
+    all_features = pd.DataFrame({
+        'income': [income],
+        'educ2': [education],
+        'par': [1 if parent == "Yes" else 0],
+        'marital': [1 if marital_status == "Married" else 0],
+        'gender': [1 if gender == "Female" else 0],
+        'age': [age]
+    }, columns=X.columns)
 
     # Display the user input features
     st.write("## User Input Features")
-    user_input = pd.DataFrame({'income': [income], 'educ2': [education], 'par': [1 if parent == "Yes" else 0],
-                               'marital': [1 if marital_status == "Married" else 0],
-                               'gender': [1 if gender == "Female" else 0], 'age': [age]})
-    st.table(user_input)
+    st.table(all_features)
 
-    # Load the model and make predictions
-    model = load_model()
-    probability = predict_probability(user_input, scaler, model)
+    # Make predictions
+    probability = predict_probability(all_features, scaler, model)
     probability_pct = probability[0] * 100
 
     # Display prediction results

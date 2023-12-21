@@ -87,7 +87,7 @@ def main():
     st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
     
     # Use HTML and inline CSS for styling the title
-    title_html = "<h1 style='color: #0a66c2;'>LinkedIn</h1><h1>User Prediction App</h1>"
+    title_html = "<h1 style='color: #0a66c2; display: inline;'>LinkedIn</h1><h1 style='display: inline;'> User Prediction App</h1>"
     st.markdown(title_html, unsafe_allow_html=True)
 
     st.markdown("""

@@ -98,7 +98,7 @@ def main():
             """)
 
 
-    income_info = "1: Less than $10,000<br>2: $10,000 to under $20,000<br>3: $20,000 to under $30,000<br>4: $30,000 to under $40,000<br>5: $40,000 to under $50,000<br>6: $50,000 to under $75,000<br>7: $75,000 to under $100,000<br>8: $100,000 to under $150,000<br>9: $150,000 or more"
+    income_info = "1: Less than $10,000  |  2: $10,000 to under $20,000  |  3: $20,000 to under $30,000  |  4: $30,000 to under $40,000  |  5: $40,000 to under $50,000  |  6: $50,000 to under $75,000  |  7: $75,000 to under $100,000  |  8: $100,000 to under $150,000  |  9: $150,000 or more"
 
     # Sidebar with user input
     st.sidebar.header("User Input Features")

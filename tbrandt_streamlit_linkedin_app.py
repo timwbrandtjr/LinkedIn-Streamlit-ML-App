@@ -84,10 +84,8 @@ def kpi_box(title, value):
     
 
 def main():
-   st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
-
-    # Use st.title to set the title and apply styling directly
-    st.title("LinkedIn User Prediction App")
+    st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
+    st.markdown("<h1 style='color: #000000;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
 
     st.markdown("""
             For this app, a logistic regression model was trained to predict LinkedIn usage based on demographic and social attributes. 

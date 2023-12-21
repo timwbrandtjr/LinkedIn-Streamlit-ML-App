@@ -87,9 +87,14 @@ def main():
     st.markdown("<h1 style='color: #0a66c2;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
 
     st.markdown("""
-            This app predicts the probability that a user is a LinkedIn member based on their 
-            demographics and social attributes. It is trained using logistic regression to 
-            estimate membership likelihood from parameters like income, education, age etc.
+            In developing this app, a logistic regression model was trained to predict LinkedIn usage based on demographic and social attributes. 
+            The dataset underwent thorough cleaning, addressing missing values to ensure data integrity. 
+            Features, including income, education, parental and marital status, gender, and age, were carefully chosen for their relevance to 
+            social media habits. The logistic regression model was specifically selected for its interpretability. 
+            Performance evaluation metrics such as accuracy, precision, recall, and F1 score were employed to gain insights into feature 
+            importance and enhance real-time predictions. Ideally, the Decision Science team could leverage a model of this nature to facilitate 
+            meaningful discussions within the marketing team. The app provides an intuitive interface for exploring marketing campaign options and 
+            targeting specific customer segments.
             """)
 
     # Sidebar with user input

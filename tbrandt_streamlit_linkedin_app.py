@@ -119,10 +119,6 @@ def main():
         'age': [age]
     }, columns=X.columns)  # Use X.columns instead of X_train.columns
 
-    # Display the user input features
-    st.write("## User Input Features")
-    st.table(all_features)
-
     # Make predictions
     probability = predict_probability(all_features, scaler, model)
     probability_pct = probability[0] * 100
@@ -142,3 +138,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

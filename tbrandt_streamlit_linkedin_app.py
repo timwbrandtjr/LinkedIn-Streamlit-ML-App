@@ -5,18 +5,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 
-# Set a custom theme
-custom_theme = {
-    "primaryColor": "#0a66c2",
-    "backgroundColor": "#f0f0f0",
-    "secondaryBackgroundColor": "#ffffff",
-    "textColor": "#000000",
-    "font": "sans-serif",
-}
-
-st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
-st.set_theme(custom_theme)
-
 # Part 1
 s = pd.read_csv("social_media_usage.csv")
 

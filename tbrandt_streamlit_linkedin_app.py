@@ -84,14 +84,18 @@ def kpi_box(title, value):
     
 
 def main():
-    st.set_page_config(
-        page_title="LinkedIn User Prediction App",
-        page_icon="https://commons.wikimedia.org/wiki/File:LinkedIn_logo_initials.png",
-        layout="wide",
-        primaryColor="#000000"  # Set the primary color to black
+    st.markdown(
+        """
+        <style>
+        .title {
+            color: #000000 !important;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
     )
 
-    st.markdown("<h1 style='color: #000000;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
+    st.title("LinkedIn User Prediction App")
 
     st.markdown("""
             For this app, a logistic regression model was trained to predict LinkedIn usage based on demographic and social attributes. 

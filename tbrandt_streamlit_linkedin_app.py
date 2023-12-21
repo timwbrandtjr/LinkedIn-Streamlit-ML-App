@@ -74,6 +74,14 @@ def predict_probability(features, scaler, model):
     probability = model.predict_proba(features_scaled)[:, 1]
     return probability
 
+def kpi_box(value, label):
+    return f"""
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 style="font-size: 24px; margin-bottom: 10px;">{value}</h2>
+        <p style="font-size: 16px; color: #555;">{label}</p>
+    </div>
+    """
+
 def main():
     st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
     st.markdown("<h1 style='color: #0a66c2;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
@@ -110,14 +118,14 @@ def main():
 
     # Display prediction results
     st.write("## Prediction")
-    st.write(f"Probability of being a LinkedIn user: {probability_pct:.2f}%")
+    st.markdown(kpi_box(f"{probability_pct:.2f}%", "Probability of being a LinkedIn user"), unsafe_allow_html=True
 
     if probability_pct >= 50:
         prediction = "LinkedIn User"
     else:
         prediction = "Non-LinkedIn User"
 
-    st.write(f"Prediction: {prediction}")
+    st.markdown(kpi_box(prediction, "Prediction"), unsafe_allow_html=True)
 
 
 if __name__ == '__main__':

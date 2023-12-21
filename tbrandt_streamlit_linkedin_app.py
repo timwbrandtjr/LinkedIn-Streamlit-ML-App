@@ -94,12 +94,12 @@ def main():
 
     # Sidebar with user input
     st.sidebar.header("User Input Features")
-    income = st.sidebar.slider("Income", 1, 9, 5)
-    education = st.sidebar.slider("Education", 1, 8, 4)
-    parent = st.sidebar.radio("Parent", ["No", "Yes"])
-    marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"])
-    gender = st.sidebar.radio("Gender", ["Male", "Female"])
-    age = st.sidebar.slider("Age", 18, 98, 30)
+    income = st.sidebar.slider("Income", 1, 9, 5, key="income_slider", style="color: #0a66c2;")
+    education = st.sidebar.slider("Education", 1, 8, 4, key="education_slider", style="color: #0a66c2;")
+    parent = st.sidebar.radio("Parent", ["No", "Yes"], key="parent_radio", help="Parental Status", )
+    marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio", style="color: #0a66c2;")
+    gender = st.sidebar.radio("Gender", ["Male", "Female"], key="gender_radio", style="color: #0a66c2;")
+    age = st.sidebar.slider("Age", 18, 98, 30, key="age_slider", style="color: #0a66c2;")
 
     # Load the fitted scaler
     scaler = load_scaler()

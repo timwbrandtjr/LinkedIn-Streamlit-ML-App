@@ -87,14 +87,12 @@ def main():
     st.markdown("<h1 style='color: #0a66c2;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
 
     st.markdown("""
-            In developing this app, a logistic regression model was trained to predict LinkedIn usage based on demographic and social attributes. 
-            The dataset underwent thorough cleaning, addressing missing values to ensure data integrity. 
-            Features, including income, education, parental and marital status, gender, and age, were carefully chosen for their relevance to 
-            social media habits. The logistic regression model was specifically selected for its interpretability. 
-            Performance evaluation metrics such as accuracy, precision, recall, and F1 score were employed to gain insights into feature 
-            importance and enhance real-time predictions. Ideally, the Decision Science team could leverage a model of this nature to facilitate 
-            meaningful discussions within the marketing team. The app provides an intuitive interface for exploring marketing campaign options and 
-            targeting specific customer segments.
+            For this app, a logistic regression model was trained to predict LinkedIn usage based on demographic and social attributes. 
+            Features including income, education, parental and marital status, gender, and age were carefully selected for their relevance 
+            to social media habits. The model was trained on an 80/20 train/test split, and logistic regression was chosen specifically for its 
+            interpretability. Performance metrics like accuracy, precision, recall and F1 score offered insights into feature importance to enhance 
+            real-time predictions. Ideally, the Decision Science team could leverage such a model to facilitate meaningful discussions within the marketing 
+            team about campaign options for targeting customer segments. The app provides an intuitive interface for exploring those options.
             """)
 
     # Sidebar with user input

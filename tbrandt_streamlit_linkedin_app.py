@@ -117,7 +117,7 @@ def main():
         'marital': [1 if marital_status == "Married" else 0],
         'gender': [1 if gender == "Female" else 0],
         'age': [age]
-    }, columns=X.columns)
+    }, columns=X.columns)  # Use X.columns instead of X_train.columns
 
     # Display the user input features
     st.write("## User Input Features")

@@ -77,6 +77,8 @@ def predict_probability(features, scaler, model):
 def kpi_box(title, value):
     return f"""
         <div style="
+            display: inline-block;
+            margin-right: 20px;
             background-color: #f9f9f9;
             border-radius: 5px;
             padding: 20px;
@@ -87,7 +89,6 @@ def kpi_box(title, value):
         </div>
     """
     
-
 def main():
     st.title("LinkedIn User Prediction App")
 

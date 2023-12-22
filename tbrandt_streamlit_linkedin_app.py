@@ -93,6 +93,9 @@ def main():
             real-time predictions. Ideally, the Decision Science team could leverage such a model to facilitate meaningful discussions within the marketing 
             team about campaign options for targeting customer segments. The app provides an intuitive interface for exploring those options.
             """)
+    user_input = pd.DataFrame({'income': [income], 'educ2': [education], 'par': [1 if parent == "Yes" else 0],
+                               'marital': [1 if marital_status == "Married" else 0],
+                               'gender': [1 if gender == "Female" else 0], 'age': [age]})
 
 
  # Sidebar with user input
@@ -140,7 +143,7 @@ def main():
 
     # Display the user input features
     # st.write("## User Input Features")
-    user_input = pd.DataFrame({'income': [income], 'educ2': [education], 'par': [1 if parent == "Yes" else 0],
+    # user_input = pd.DataFrame({'income': [income], 'educ2': [education], 'par': [1 if parent == "Yes" else 0],
                                'marital': [1 if marital_status == "Married" else 0],
                                'gender': [1 if gender == "Female" else 0], 'age': [age]})
     # st.table(user_input)

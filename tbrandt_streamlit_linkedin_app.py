@@ -77,8 +77,8 @@ def predict_probability(features, scaler, model):
 def kpi_box(title, value):
     return f"""
     <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <h2 style="font-size: 30px; margin-bottom: 10px;">{title}</h2>
-        <p style="font-size: 24px; color: #555;">{value}</p>
+        <h2 style="font-size: 26px; margin-bottom: 10px;">{title}</h2>
+        <p style="font-size: 22px; color: #555;">{value}</p>
     </div>
     """
     

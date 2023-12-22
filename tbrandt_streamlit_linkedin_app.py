@@ -76,22 +76,15 @@ def predict_probability(features, scaler, model):
 
 def kpi_box(title, value):
     return f"""
-        <div style="
-            display: inline-block;
-            min-width: 200px;  
-            margin-right: 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            ">
-            <h3 style="font-size: 24px;">{title}</h3>
-            <p style="font-size: 18px;">{value}</p>
-        </div>
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 style="font-size: 30px; margin-bottom: 10px;">{title}</h2>
+        <p style="font-size: 24px; color: #555;">{value}</p>
+    </div>
     """
-    
+
 def main():
-    st.title("LinkedIn User Prediction App")
+    st.set_page_config(page_title="LinkedIn User Prediction App", page_icon=":bar_chart:", layout="wide")
+    st.markdown("<h1 style='color: #0a66c2;'>LinkedIn User Prediction App</h1>", unsafe_allow_html=True)
 
     st.markdown("""
             For this app, a logistic regression model was trained to predict LinkedIn usage based on demographic and social attributes. 
@@ -111,25 +104,22 @@ def main():
     gender = st.sidebar.radio("Gender", ["Male", "Female"], key="gender_radio")
     age = st.sidebar.slider("Age", 18, 98, 30, key="age_slider")
 
-    # Load the fitted scaler and model
+    # Load the fitted scaler
     scaler = load_scaler()
+
+    # Display the user input features
+    st.write("## User Input Features")
+    user_input = pd.DataFrame({'income': [income], 'educ2': [education], 'par': [1 if parent == "Yes" else 0],
+                               'marital': [1 if marital_status == "Married" else 0],
+                               'gender': [1 if gender == "Female" else 0], 'age': [age]})
+    st.table(user_input)
+
+    # Load the model and make predictions
     model = load_model()
-
-    # Create a DataFrame with all features (including user input)
-    all_features = pd.DataFrame({
-        'income': [income],
-        'educ2': [education],
-        'par': [1 if parent == "Yes" else 0],
-        'marital': [1 if marital_status == "Married" else 0],
-        'gender': [1 if gender == "Female" else 0],
-        'age': [age]
-    }, columns=X.columns)  # Use X.columns instead of X_train.columns
-
-    # Make predictions
-    probability = predict_probability(all_features, scaler, model)
+    probability = predict_probability(user_input, scaler, model)
     probability_pct = probability[0] * 100
 
-# Display prediction results
+    # Display prediction results
     st.write("## Prediction")
     col1, col2 = st.columns(2)
     col1.markdown(kpi_box("Probability of being a LinkedIn user", f"{probability_pct:.2f}%"), unsafe_allow_html=True)
@@ -144,4 +134,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 

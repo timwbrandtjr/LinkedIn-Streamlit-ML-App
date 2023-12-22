@@ -56,7 +56,6 @@ logistic_model = LogisticRegression(class_weight="balanced", max_iter=1000)
 logistic_model.fit(X_train_scaled, y_train)
 
 # Part 2
-
 def load_model():
     # Load your trained model here
     # For example: model = joblib.load('your_model_file.pkl')

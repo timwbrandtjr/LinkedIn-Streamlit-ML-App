@@ -97,15 +97,9 @@ def main():
 
     # Sidebar with user input
     st.sidebar.header("User Input Features")
-
-    # Income selection box
-    income_options = ["$10,000 to $20,000", "$20,000 to $30,000", "$40,000 to $50,000",
-                  "$50,000 to $75,000", "$100,000 to $150,000", "$150,000+", "Don't Know"]
-    income = st.sidebar.selectbox("Household Income", income_options)
-
-    # Other sliders and radio buttons
+    income = st.sidebar.slider("Income", 1, 9, 5, key="income_slider")
     education = st.sidebar.slider("Education", 1, 8, 4, key="education_slider")
-    parent = st.sidebar.radio("Parent", ["No", "Yes"], key="parent_radio", help="Parental Status")
+    parent = st.sidebar.radio("Parent", ["No", "Yes"], key="parent_radio", help="Parental Status", )
     marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio")
     gender = st.sidebar.radio("Gender", ["Male", "Female"], key="gender_radio")
     age = st.sidebar.slider("Age", 18, 98, 30, key="age_slider")
@@ -140,5 +134,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-

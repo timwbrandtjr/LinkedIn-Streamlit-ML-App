@@ -130,14 +130,18 @@ def main():
     # Display prediction results
     st.write("## Prediction")
     col1, col2 = st.columns(2)
-    col1.markdown(kpi_box("Probability of being a LinkedIn user", f"{probability_pct:.2f}%"), unsafe_allow_html=True)
+
+    # Use the same column for both KPIs
+    with col1:
+        st.markdown(kpi_box("Probability of being a LinkedIn user", f"{probability_pct:.2f}%"), unsafe_allow_html=True)
 
     if probability_pct >= 50:
         prediction = "LinkedIn User"
     else:
         prediction = "Non-LinkedIn User"
 
-    col2.markdown(kpi_box("Prediction", prediction), unsafe_allow_html=True)
+    with col1:  # Use the same column as the first KPI
+        st.markdown(kpi_box("Prediction", prediction), unsafe_allow_html=True)
 
 
 if __name__ == '__main__':

@@ -115,7 +115,21 @@ def main():
     # Create a dropdown for income
     income = st.sidebar.selectbox("Income (Household)", list(income_options.keys()), format_func=lambda x: income_options[x])
 
-    education = st.sidebar.slider("Education", 1, 8, 4, key="education_slider")
+        # Define the education options
+    education_options = {
+        1: "Less than high school (Grades 1-8 or no formal schooling)",
+        2: "High school incomplete (Grades 9-11 or Grade 12 with NO diploma)",
+        3: "High school graduate (Grade 12 with diploma or GED certificate)",
+        4: "Some college, no degree (includes some community college)",
+        5: "Two-year associate degree from a college or university",
+        6: "Four-year college or university degree/Bachelor’s degree (e.g., BS, BA, AB)",
+        7: "Some postgraduate or professional schooling, no postgraduate degree (e.g. some graduate school)",
+        8: "Postgraduate or professional degree, including master’s, doctorate, medical or law degree (e.g., MA, MS, PhD, MD, JD)"
+    }
+
+    # Create a dropdown for education
+    education = st.sidebar.selectbox("Education (Highest Level)", list(education_options.keys()), format_func=lambda x: education_options[x])
+
     parent = st.sidebar.radio("Parent", ["No", "Yes"], key="parent_radio", help="Parental Status", )
     marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio")
     gender = st.sidebar.radio("Gender", ["Male", "Female"], key="gender_radio")

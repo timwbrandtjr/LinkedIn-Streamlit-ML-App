@@ -102,13 +102,13 @@ def main():
     # Define the income options
     income_options = {
         1: "Less than $10,000",
-        2: "10 to under $20,000",
-        3: "20 to under $30,000",
-        4: "30 to under $40,000",
-        5: "40 to under $50,000",
-        6: "50 to under $75,000",
-        7: "75 to under $100,000",
-        8: "100 to under $150,000",
+        2: "10 to $20,000",
+        3: "20 to $30,000",
+        4: "30 to $40,000",
+        5: "40 to $50,000",
+        6: "50 to $75,000",
+        7: "75 to $100,000",
+        8: "100 to $150,000",
         9: "$150,000 or more"
     }
     

@@ -92,6 +92,7 @@ def main():
             interpretability. Performance metrics like accuracy, precision, recall and F1 score offered insights into feature importance to enhance 
             real-time predictions. Ideally, the Decision Science team could leverage such a model to facilitate meaningful discussions within the marketing 
             team about campaign options for targeting customer segments. The app provides an intuitive interface for exploring those options.
+            👈 Explore and customize your predictions by adjusting the input features on the left!
             """)
 
  # Sidebar with user input

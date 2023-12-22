@@ -95,9 +95,26 @@ def main():
             team about campaign options for targeting customer segments. The app provides an intuitive interface for exploring those options.
             """)
 
-    # Sidebar with user input
+
+ # Sidebar with user input
     st.sidebar.header("User Input Features")
-    income = st.sidebar.slider("Income", 1, 9, 5, key="income_slider")
+    
+    # Define the income options
+    income_options = {
+        1: "Less than $10,000",
+        2: "10 to under $20,000",
+        3: "20 to under $30,000",
+        4: "30 to under $40,000",
+        5: "40 to under $50,000",
+        6: "50 to under $75,000",
+        7: "75 to under $100,000",
+        8: "100 to under $150,000",
+        9: "$150,000 or more"
+    }
+    
+    # Create a dropdown for income
+    income = st.sidebar.selectbox("Income (Household)", list(income_options.keys()), format_func=lambda x: income_options[x])
+
     education = st.sidebar.slider("Education", 1, 8, 4, key="education_slider")
     parent = st.sidebar.radio("Parent", ["No", "Yes"], key="parent_radio", help="Parental Status", )
     marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio")

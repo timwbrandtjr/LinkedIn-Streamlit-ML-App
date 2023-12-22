@@ -111,7 +111,7 @@ def main():
     }
     
     # Create a dropdown for income
-    income = st.sidebar.selectbox("Income (Household)", list(income_options.keys()), format_func=lambda x: income_options[x])
+    income = st.sidebar.selectbox("Income💲(Household)", list(income_options.keys()), format_func=lambda x: income_options[x])
 
         # Define the education options
     education_options = {
@@ -126,13 +126,13 @@ def main():
     }
 
     # Create a dropdown for education
-    education = st.sidebar.selectbox("Education (Highest Level)", list(education_options.keys()), format_func=lambda x: education_options[x])
+    education = st.sidebar.selectbox("Education 🎓 (Highest Level)", list(education_options.keys()), format_func=lambda x: education_options[x])
     st.write(f"Selected Education: {education}")
 
     parent = st.sidebar.radio("Parent 👨‍👩‍👦", ["No", "Yes"], key="parent_radio", help="Parental Status", )
-    marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio")
-    gender = st.sidebar.radio("Gender", ["Male", "Female"], key="gender_radio")
-    age = st.sidebar.slider("Age", 18, 98, 30, key="age_slider")
+    marital_status = st.sidebar.radio("Marital Status ❤️", ["Single", "Married"], key="marital_status_radio")
+    gender = st.sidebar.radio("Gender 👫", ["Male", "Female"], key="gender_radio")
+    age = st.sidebar.slider("Age 👶", 18, 98, 30, key="age_slider")
 
     # Load the fitted scaler
     scaler = load_scaler()

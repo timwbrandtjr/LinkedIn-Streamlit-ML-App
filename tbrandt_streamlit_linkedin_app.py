@@ -128,6 +128,7 @@ def main():
 
     # Create a dropdown for education
     education = st.sidebar.selectbox("Education (Highest Level)", list(education_options.keys()), format_func=lambda x: education_options[x])
+    st.write(f"Selected Education: {education}")
 
     parent = st.sidebar.radio("Parent 👨‍👩‍👦", ["No", "Yes"], key="parent_radio", help="Parental Status", )
     marital_status = st.sidebar.radio("Marital Status", ["Single", "Married"], key="marital_status_radio")

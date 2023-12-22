@@ -78,6 +78,7 @@ def kpi_box(title, value):
     return f"""
         <div style="
             display: inline-block;
+            min-width: 200px;  
             margin-right: 20px;
             background-color: #f9f9f9;
             border-radius: 5px;
